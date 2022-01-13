@@ -3,6 +3,18 @@ This code documents the basics of javascript MLE in APEX.
 
 ## Basic Queries
 
+- Access APEX variables
+
+  ```
+  apex.env.APP_USER
+  apex.env.P1_USER
+  ```
+
+- output all
+```
+console.log(JSON.stringify(globalThis));
+```
+
 - Example query no parameter
 ```
 console.log('Basic output query');
