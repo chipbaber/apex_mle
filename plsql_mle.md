@@ -36,7 +36,7 @@ user_code clob := q'~
 
 
     //Build the query notcie the parameter syntax to include variables.
-     const sqlQuery = 'select FIRSTNAME, LASTNAME from players where JERSEY_NUMBER = :jersey';
+     const sqlQuery = 'select FIRSTNAME, LASTNAME  from players where JERSEY_NUMBER = :jersey';
      console.log("Output the query formed.   ---  " + sqlQuery);
 
     //Create Connection and Execute the Query
