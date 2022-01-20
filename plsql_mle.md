@@ -153,7 +153,7 @@ BEGIN
 ctx := dbms_mle.create_context();
 
 --Get the players jersey number in PL/SQL
-select JERSEY_NUMBER into jersey_num from players where player_id = 1;
+select JERSEY_NUMBER into jersey_num from players where player_id = p_id;
 
 --Pass the jersey number into javscript as a variable.
 dbms_mle.export_to_mle(ctx, 'num', jersey_num);
