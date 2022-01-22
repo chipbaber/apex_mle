@@ -3,7 +3,7 @@ This code serves as a basic example of pl/sql with MLE.
 
 ## Check to see database version if free tier look for 21c
 ```
-SELECT banner FROM V$VERSION
+SELECT banner FROM V$VERSION;
 ```
 
 ##Basic Hello world.
@@ -11,9 +11,11 @@ SELECT banner FROM V$VERSION
 ```
 DECLARE
 ctx DBMS_MLE.context_handle_t;
+
 user_code clob := q'~
-    console.log('Hello World!');
+    console.log('Hello Chip!');
 ~';
+
 BEGIN
     ctx := DBMS_MLE.create_context();
     DBMS_MLE.eval(ctx, 'JAVASCRIPT', user_code);
@@ -39,6 +41,7 @@ select player_id, firstname, lastname, jersey_number, getCodeName(player_id) as 
 create or replace function getCodeName( playerId IN number )
 return varchar2
 is
+
 ctx DBMS_MLE.context_handle_t;
 jersey_num number;
 fullName varchar2(100);
